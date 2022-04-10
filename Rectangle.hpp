@@ -8,11 +8,11 @@ public:
     Rectangle(double x, double y);
     Rectangle(const Rectangle & other) = default;
 
-    double getArea() const;
-    double getPerimeter() const;
-    double getX() const;
+    double getArea() const override;
+    double getPerimeter() const override;
+    double getX() const; // nie mozna oznaczyc jako final. Tylko metody wirtualne moga byc final.
     double getY() const;
-    void print() const;
+    void print() const override;
 
 private:
     Rectangle() = delete;
