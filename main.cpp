@@ -10,6 +10,12 @@
 
 using namespace std;
 
+constexpr unsigned long fibonacci(int n){
+    if(n<=1)
+        return n;
+    return fibonacci(n-1) + fibonacci(n-2);
+}
+
 using Collection = vector<shared_ptr<Shape>>;
 
 bool sortByArea(shared_ptr<Shape> first, shared_ptr<Shape> second)
@@ -65,6 +71,11 @@ void findFirstShapeMatchingPredicate(const Collection& collection,
 
 int main()
 {
+    constexpr unsigned long fib = fibonacci(45);
+    cout << fib << endl;
+    // time without constexpr: ~7,2s
+    // time with constexpr: ~0,01s - instantly
+
     Collection shapes;
     shapes.push_back(make_shared<Circle>(2.0));
     shapes.push_back(make_shared<Circle>(3.0));
