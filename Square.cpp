@@ -27,3 +27,5 @@ void Square::print()
               << "          area: " << getArea() << std::endl
               << "     perimeter: " << getPerimeter() << std::endl;
 }
+
+Square::Square(Color c) : Rectangle(c) {}

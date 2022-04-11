@@ -34,3 +34,5 @@ void Circle::print() const
               << "          area: " << getArea() << std::endl
               << "     perimeter: " << getPerimeter() << std::endl;
 }
+
+Circle::Circle(Color c) : Shape(c), r_(5) {}

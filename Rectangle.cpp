@@ -41,3 +41,5 @@ void Rectangle::print() const
               << "          area: " << getArea() << std::endl
               << "     perimeter: " << getPerimeter() << std::endl;
 }
+
+Rectangle::Rectangle(Color c) : Shape(c), x_(5), y_(10) {}

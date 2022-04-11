@@ -6,6 +6,7 @@ class Circle final : public Shape
 {
 public:
     Circle(double r);
+    Circle(Color c);
     Circle(const Circle & other) = default;
 
     double getArea() const override;

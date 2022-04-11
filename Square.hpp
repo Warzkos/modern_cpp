@@ -6,6 +6,7 @@ class Square : public Rectangle
 {
 public:
     Square(double x);
+    Square(Color c);
     Square(const Square & other) = default;
 
     double getArea();

@@ -76,7 +76,20 @@ int main()
     // time without constexpr: ~7,2s
     // time with constexpr: ~0,01s - instantly
 
-    Collection shapes;
+    Collection shapes = {
+            make_shared<Circle>(2.0),
+            make_shared<Circle>(3.0),
+            nullptr,
+            make_shared<Circle>(4.0),
+            make_shared<Rectangle>(10.0, 5.0),
+            make_shared<Square>(3.0),
+            make_shared<Circle>(4.0),
+            make_shared<Circle>(RED),
+            make_shared<Rectangle>(GREEN),
+            make_shared<Square>(BLUE)
+    }; // added circle, rectangle and square initialized by Color parameter
+
+    /* initialized with initializer list above
     shapes.push_back(make_shared<Circle>(2.0));
     shapes.push_back(make_shared<Circle>(3.0));
     shapes.push_back(nullptr);
@@ -84,6 +97,8 @@ int main()
     shapes.push_back(make_shared<Rectangle>(10.0, 5.0));
     shapes.push_back(make_shared<Square>(3.0));
     shapes.push_back(make_shared<Circle>(4.0));
+    */
+
     printCollectionElements(shapes);
 
     cout << "Areas before sort: " << std::endl;
