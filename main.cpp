@@ -18,42 +18,42 @@ constexpr unsigned long fibonacci(int n){
 
 using Collection = vector<shared_ptr<Shape>>;
 
-bool sortByArea(shared_ptr<Shape> first, shared_ptr<Shape> second)
+auto sortByArea(shared_ptr<Shape> first, shared_ptr<Shape> second)
 {
     if(first == nullptr || second == nullptr)
         return false;
     return (first->getArea() < second->getArea());
 }
 
-bool perimeterBiggerThan20(shared_ptr<Shape> s)
+auto perimeterBiggerThan20(shared_ptr<Shape> s)
 {
     if(s)
         return (s->getPerimeter() > 20);
     return false;
 }
 
-bool areaLessThan10(shared_ptr<Shape> s)
+auto areaLessThan10(shared_ptr<Shape> s)
 {
     if(s)
         return (s->getArea() < 10);
     return false;
 }
 
-void printCollectionElements(const Collection& collection)
+auto printCollectionElements(const Collection& collection)
 {
     for(const auto & it : collection)
         if(it)
             it->print();
 }
 
-void printAreas(const Collection& collection)
+auto printAreas(const Collection& collection)
 {
     for(const auto & it : collection)
         if(it)
             cout << it->getArea() << std::endl;
 }
 
-void findFirstShapeMatchingPredicate(const Collection& collection,
+auto findFirstShapeMatchingPredicate(const Collection& collection,
                                      bool (*predicate)(shared_ptr<Shape> s),
                                      std::string info)
 {
