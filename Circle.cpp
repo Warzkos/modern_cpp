@@ -36,3 +36,7 @@ void Circle::print() const
 }
 
 Circle::Circle(Color c) : Shape(c), r_(5) {}
+
+double Circle::getPi() const {
+    return M_PI;
+}
