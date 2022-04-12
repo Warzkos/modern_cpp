@@ -9,8 +9,8 @@ public:
     Square(Color c);
     Square(const Square & other) = default;
 
-    double getArea() const override;
-    double getPerimeter() const override;
+    double getArea() const noexcept override;
+    double getPerimeter() const noexcept override;
     void print() const override;
 
 private:
