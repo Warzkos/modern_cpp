@@ -76,6 +76,10 @@ int main()
     // time without constexpr: ~7,2s
     // time with constexpr: ~0,01s - instantly
 
+    // creating objects to move into the collection
+    auto big_circle = make_shared<Circle>(8.0);
+    auto small_rectangle = make_shared<Rectangle>(1.0,2.0);
+
     Collection shapes = {
             make_shared<Circle>(2.0),
             make_shared<Circle>(3.0),
@@ -86,7 +90,9 @@ int main()
             make_shared<Circle>(4.0),
             make_shared<Circle>(RED),
             make_shared<Rectangle>(GREEN),
-            make_shared<Square>(BLUE)
+            make_shared<Square>(BLUE),
+            move(big_circle), // moving objects into collection
+            move(small_rectangle)
     }; // added circle, rectangle and square initialized by Color parameter
 
     /* initialized with initializer list above
