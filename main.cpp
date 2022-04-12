@@ -69,6 +69,10 @@ auto findFirstShapeMatchingPredicate(const Collection& collection,
     }
 }
 
+template<class DerivedType, class... Arguments>
+    std::shared_ptr<Shape> make_shape(Arguments&&... args) {
+        return make_shared<DerivedType>(std::forward<Arguments>(args)...); // perfect forwarding
+    }
 int main()
 {
     constexpr unsigned long fib = fibonacci(45);
@@ -92,7 +96,8 @@ int main()
             make_shared<Rectangle>(GREEN),
             make_shared<Square>(BLUE),
             move(big_circle), // moving objects into collection
-            move(small_rectangle)
+            move(small_rectangle),
+            make_shape<Square>(2.0)
     }; // added circle, rectangle and square initialized by Color parameter
 
     /* initialized with initializer list above
