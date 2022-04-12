@@ -40,3 +40,7 @@ Circle::Circle(Color c) : Shape(c), r_(5) {}
 double Circle::getPi() const {
     return M_PI;
 }
+
+Circle::Circle(double r, Color c): Circle(c){ //delegating constructor
+    r_=r;
+}

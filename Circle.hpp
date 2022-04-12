@@ -8,6 +8,7 @@ public:
     Circle(double r);
     Circle(Color c);
     Circle(const Circle & other) = default;
+    Circle(double r, Color c);
 
     Circle(Circle&& src) noexcept = default;
     Circle& operator=(Circle&& src) noexcept = default; // rule of five says that if we implement one of the default operations we should define all other default operations
